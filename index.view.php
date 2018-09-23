@@ -36,14 +36,16 @@
               </tr>
             </thead>
             <tbody>
+            <?php foreach ($posts as $post):?>
               <tr>
-                <th scope="row">1</th>
-                <td>Lorem ipsum dolor.</td>
+                <th scope="row"><?php echo $post['id']; ?></th>
+                <td><?php echo $post['title']; ?></td>
                 <td>
                   <a href="" class="btn btn-warning">Edit</a>
                   <a href="" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
+            <?php endforeach;?>
             </tbody>
           </table>
         </div>
