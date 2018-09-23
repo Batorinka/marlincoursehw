@@ -1,11 +1,8 @@
 <?php
 
 include 'functions.php';
-include 'database/QueryBuilder.php';
+$db = include 'database/start.php';
 
-$pdo = connectToDB();
-
-$db = new QueryBuilder($pdo);
 $posts = $db->getAll();
 
 include 'index.view.php';
