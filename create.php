@@ -9,10 +9,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <form action="/store.php" method='POST'>
+          <form action="/store.php" method='POST' enctype="multipart/form-data">
             <div class="form-group">
-              <label for="">Title</label>
-              <input type="text" name='title' class="form-control">
+              <label for="">Picture</label>
+              <input type="file" name='file' class="form-control">
+              <label for="">Picture</label>
+              <input type="file" name='file2' class="form-control">
+              <label for="">Picture</label>
+              <input type="file" name='file3' class="form-control">
             </div>
             <div class="form-group">
               <button class="btn btn-success">Add Post</button>

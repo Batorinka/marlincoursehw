@@ -1,8 +1,10 @@
 <?php
 include 'functions.php';
-$db = include 'database/start.php';
+include 'FileHandler.php';
 
 $id = $_GET['id'];
-$db->delete('posts', $id);
+
+$fileHandler = new FileHandler;
+$fileHandler->deleteFile($id, 'files', 'posts', 'file');
 
 header('Location: /index.php');

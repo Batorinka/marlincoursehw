@@ -7,4 +7,4 @@ $post = $db->getOne('posts', $id);
 
 ?>
 
-<h1><?= $post['title']; ?></h1>
+<img src="files/<?= $post['file']; ?>" alt="">

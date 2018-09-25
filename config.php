@@ -3,7 +3,7 @@
 return [
 
   'database' => [
-    'database'   => 'app3',
+    'database'   => 'app4',
     'username'   => 'root',
     'password'   => '123',
     'connection' => 'mysql:host=localhost',

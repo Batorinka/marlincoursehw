@@ -4,8 +4,7 @@ class QueryBuilder {
 
   protected $pdo;
 
-  public function __construct($pdo)
-  {
+  public function __construct($pdo) {
     $this->pdo = $pdo;
   }
 
@@ -28,6 +27,7 @@ class QueryBuilder {
   }
 
   public function create($table, $data) {
+
     $keys = implode(',', array_keys($data));
     $tags = ":" . implode(', :', array_keys($data));
 
@@ -35,6 +35,7 @@ class QueryBuilder {
 
     $statement = $this->pdo->prepare($sql);
     $statement->execute($data);
+
   }
 
   public function update($table, $data, $id) {

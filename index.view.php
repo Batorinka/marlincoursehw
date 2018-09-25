@@ -26,7 +26,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <a href="" class="btn btn-success">Add Post</a>
+          <a href="/create.php" class="btn btn-success">Add Post</a>
           <table class="table">
             <thead>
               <tr>
@@ -41,7 +41,7 @@
                 <th scope="row"><?= $post['id']; ?></th>
                 <td>
                   <a href="/show.php?id=<?=$post['id'];?>">
-                    <?= $post['title']; ?>
+                    <?= $post['file']; ?>
                   </a>
                 </td>
                 <td>

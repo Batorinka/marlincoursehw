@@ -1,10 +1,9 @@
 <?php
 
 include 'functions.php';
-$db = include 'database/start.php';
+include 'FileHandler.php';
 
-$db->create('posts', [
-  'title' => $_POST['title']
-]);
+$fileHandler = new FileHandler;
+$fileHandler->uploadFile($_FILES, 'files', 'posts', 'file');
 
 header('Location: /index.php');
