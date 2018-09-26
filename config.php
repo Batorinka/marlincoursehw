@@ -5,7 +5,7 @@ return [
   'database' => [
     'database'   => 'app4',
     'username'   => 'root',
-    'password'   => '123',
+    'password'   => '',
     'connection' => 'mysql:host=localhost',
     'charset'    => 'utf8'
   ]
