@@ -1,0 +1,4 @@
+config.php
+/files/*
+/.idea/*
+/.idea/workspace.xml
