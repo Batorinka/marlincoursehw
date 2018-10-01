@@ -2,7 +2,7 @@
 
 
 class FileHandler {
-  
+
   protected $db;
 
   public function __construct($db) {
@@ -15,7 +15,7 @@ class FileHandler {
       if ($file['name'] !== '') {
         $name = mt_rand(0, 100000) . $file['name'];
 
-        copy($file['tmp_name'], $dir . '/' . $name);
+        move_uploaded_file($file['tmp_name'], $dir . '/' . $name);
 
         $this->db->create($table, [
           $tableColumn => $name
@@ -26,7 +26,7 @@ class FileHandler {
 
   public function deleteFile($id, $dir, $table, $tableColumn)
   {
-    
+
     $name = $this->db->getOne($table, $id);
     $this->db->delete($table, $id);
 

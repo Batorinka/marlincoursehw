@@ -16,13 +16,13 @@ class Validation
 		$this->rulesForField[$fieldsName] = $rule;
 	}
 
-	public function validate()
+	public function validate(array $data)
 	{
-		if (count($_POST) == 0) {
+		if (count($data) == 0) {
 	    throw new Exception("The array of post parameters is empty");
     }
 
-		foreach ($_POST as $key => $value) {
+		foreach ($data as $key => $value) {
 			if (in_array($key, $this->requiredFields) && empty($value)) {
 				$this->errors[$key] = "field $key is required";
 			}
@@ -30,7 +30,7 @@ class Validation
 
 		foreach ($this->rulesForField as $key => $value) {
 			if ($value == 'email') {
-				if(!filter_var($_POST[$key], FILTER_VALIDATE_EMAIL)){
+				if(!filter_var($data[$key], FILTER_VALIDATE_EMAIL)){
 					$this->errors[$key] = "it's not correct email";
 				}
 			}
